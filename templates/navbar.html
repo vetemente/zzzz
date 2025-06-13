@@ -1,0 +1,66 @@
+{% block top %}
+{% endblock %}
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                aria-expanded="false" aria-controls="navbar">
+                Please log in from your computer
+            </button>
+            <a style="color: red;" class="navbar-brand" href="{{ url_for('index') }}">
+                Darkbin 
+            </a>
+        </div>
+
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul style="color: white;" class="nav navbar-nav">
+                <li class="">
+                    <a href="{{ url_for('index') }}">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('new_paste') }}">
+                        Add Paste
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('users') }}">
+                        Users
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('hall_of_loosers') }}">
+                        Hall of Autism
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('tos') }}">
+                        TOS
+                    </a>
+                </li>
+                <li>
+                    <a href="https://t.me/darkbin_channel">
+                        Telegram
+                    </a>
+                </li>
+            </ul>
+            <div class="sidebar-right">
+                <ul class="nav navbar-nav">
+                    {% if username %}
+                        <li><a href="{{ url_for('user', username=username) }}">{{ username }}</a></li>
+                        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                    {% else %}
+                        <li><a href="{{ url_for('login') }}">Login</a></li>
+                        <li><a href="{{ url_for('register') }}">Register</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+{% block bottom %}
+{% endblock %}

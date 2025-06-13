@@ -1,0 +1,276 @@
+{% extends "navbar.html" %}
+
+{% block top %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Darkbin</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darkbin</title>
+    <link rel="stylesheet" href="/static/legacy/index.css">
+    <link rel="stylesheet" href="/static/files/dropdown.css">
+    <link rel="stylesheet" href="/static/files/bootstrap.min.js">
+    <link rel="stylesheet" href="/static/files/doxbin.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Darkbin is a platform with almost no rules, except that it is completely free">
+</head>
+    <style>
+    body, p {
+        background-color: #060606;
+        color: white;
+        font-family: Arial, sans-serif;
+    }
+
+    td, tr, tbody {
+        background-color: #060606;
+        color: white;
+    }
+
+    .table>tfoot>tr>th,
+    .table>tfoot>tr>td {
+        border-top-color: rgb(108, 100, 88);
+    }
+
+    .table-striped tbody>tr:nth-child(2n+1)>td,
+    .table-striped tbody>tr:nth-child(2n+1)>th {
+        background-color: rgb(23, 25, 26);
+    }
+
+    .table-striped tbody>tr:nth-child(2n)>td,
+    .table-striped tbody>tr:nth-child(2n)>th {
+        background-color: #0f0f0f;
+    }
+
+    .table-pin tbody>tr:nth-child(2n+1)>td,
+    .table-pin tbody>tr:nth-child(2n+1)>th {
+        background-color: rgb(23, 25, 26);
+    }
+
+    .table-pin tbody>tr:nth-child(2n)>td,
+    .table-pin tbody>tr:nth-child(2n)>th {
+        background-color: #0f0f0f;
+    }
+
+    .table>tfoot>tr>th,
+    .table>tfoot>tr>td {
+        line-height: 1.42857;
+        vertical-align: top;
+        padding: 8px;
+        border-top: 1px solid rgb(40, 40, 40);
+    }
+
+    ::-webkit-scrollbar {
+        background-color: #1b1e1f;
+        color: #918b82;
+    }
+
+    ::-webkit-scrollbar-corner {
+        background-color: #141617;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: #3b3f41;
+    }
+
+    .login-div {
+        margin: 0 auto;
+        max-width: 500px;
+        min-width: 100px;
+        width: 100%;
+        text-align: left;
+    }
+
+    .login-div label {
+        padding: 10px 0px 1px 3px;
+        margin: 0;
+    }
+
+    input {
+        line-height: 1.2;
+        color: white;
+        background: #282828;
+        border: 0;
+        border-radius: 2px;
+        display: inline-block;
+        -webkit-font-smoothing: antialiased;
+        outline: none;
+        padding: 7px 5px;
+        width: 100%;
+        font-size: 100%;
+    }
+
+    input::placeholder {
+        color: rgb(167, 167, 167);
+    }
+
+    input[type=submit] {
+        line-height: 1.2;
+        color: white;
+        background: #282828;
+        border: 0;
+        border-radius: 2px;
+        display: block;
+        -webkit-font-smoothing: antialiased;
+        outline: none;
+        padding: 7px 5px;
+        width: 90%;
+        margin: 15px auto 50px auto;
+    }
+
+    input[type=submit]:hover {
+        color: white;
+        background: #3d3d3d;
+        text-decoration: none;
+    }
+
+    .center {
+        text-align: center;
+    }
+
+
+    </style>
+
+<body>
+
+    <div class="col-md-12">
+        <div class="col-md-12" style="margin-top: 60px;float:none;">
+            <div align="center">
+                <pre
+                    style="font: 10px/10px monospace; background-color: #060606; overflow-x: hidden; overflow-y: hidden; border: none; color: rgb(255, 0, 0);">
+@@@    @@@@@@                 @    @@@              
+@@@@@@@@@@@@@@@             @@@@@@  @@@           
+@@@@        @@@@@            @@       @@          
+@@             @@@          @@        @          
+@@               @@@         @@       @          
+@@                @@@        @@   @@@@@@@@@@@@   
+@@                 @@@       @@ @@@@         @@  
+@@                 @@@       @@               @@ 
+@@                @@@        @@                @@
+@@                @@         @                 @@
+@@@               @@         @@@@               @@
+@@              @@@          @@@@              @@ 
+@@@           @@@@           @@  @@           @@@  
+@@@          @@@@            @@    @@@@@@@@@@@@@    
+@@@@@@    @@@@@@               @@      @@@@@@@        
+@@@   @@@@@@@@                                              
+            </pre>
+                <h5 class="announcement a-1" style="color:#2AABEE;"><u><a style="color:inherit;" href="https://t.me/darkbin_channel">Official Darkbin Telegram</a></u></h5>
+                <h5 class="announcement a-2" style="color:#CC0000;"><u> <a style="color:inherit;" href="https://t.me/darkbin_channel/8">Mirrors: darkbin.ru | darkbin.online</a> </u></h5>
+            </div>
+        </div>
+
+        <div class="col-md-7" style="float:none;margin:auto;padding:0;">
+            <h6 style="margin-top: 14px;">Pinned Pastes</h6>
+            <table class="table table-pin table-hover">
+                <thead>
+                    <tr style="background-color: #3a3a3a;">
+                        <th colspan="3">Title</th>
+                        <th class="clickable text-center auto-size" id="commentsorder" style="width: 105px;">Comments</th>
+                        <th class="clickable text-center r-hide" id="dateorder" style="width: 120px">Views</th>
+                        <th class="clickable text-center auto-size" id="commentsorder" style="width: 105px;">Created by</th>
+                        <th class="clickable text-center auto-size" id="viewsorder">Added</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for pinned_post in pinned_posts_list %}
+                    <tr class="doxentry">
+                        <td colspan="3" style="overflow: hidden;text-overflow: ellipsis;">
+                            <a title="{{ pinned_post.name }}" href="{{ url_for('post', file=pinned_post.name) }}">
+                                {{ pinned_post.name }}
+                            </a>
+                        </td>
+                        <td style="width: 120px" class="text-center r-hide">{{ pinned_post.comments|length }}</td>
+                        <td style="width: 120px" class="text-center r-hide">{{ pinned_post.view }}</td>
+                        <td style="width: 105px;" class="text-center">
+                            {% if pinned_post.pastownerstatus == 'root' %}
+                                <a class="dox-username" href="{{ url_for('user', username=pinned_post.pastowner) }}" target="_self" style="color: #ff0000;font-weight: bold;background-image: url('https://cdn.doxbin.net/red.gif');">
+                                    {{ pinned_post.pastowner }}
+                                </a>
+                            {% elif pinned_post.pastownerstatus == 'admin' %}
+                                <a class="dox-username" href="{{ url_for('user', username=pinned_post.pastowner) }}" target="_self" style="color: #bb71e4; font-weight: bold;background-image: url('https://cdn.doxbin.net/purple.gif');">
+                                    {{ pinned_post.pastowner }}
+                                </a>
+                            {% elif pinned_post.pastownerstatus == 'mod' %}
+                            <a class="dox-username" href="{{ url_for('user', username=pinned_post.pastowner) }}" target="_self" style="color: #FFD700; font-weight: bold;background-image: url('https://cdn.doxbin.net/gold.gif');">
+                                {{ pinned_post.pastowner }}
+                            </a>   
+                            {% elif pinned_post.pastownerstatus == 'council' %}
+                                <a class="dox-username" href="{{ url_for('user', username=pinned_post.pastowner) }}" target="_self" style="color: #87cefa; font-weight: bold;">
+                                    {{ pinned_post.pastowner }}
+                                </a>
+                            {% elif pinned_post.pastownerstatus == 'user' %}
+                                <a href="{{ url_for('user', username=pinned_post.pastowner) }}">{{ pinned_post.pastowner }}</a>
+                            {% endif %}
+                        </td>
+                        <td class="text-center">{{ pinned_post.creation_date }} {{ pinned_post.creation_time }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        
+            <!-- <h6 style="margin-top: 14px; color: white;">Pastes</h6> -->
+            <table class="table table-striped table-hover" style="margin-top: 0px;">
+                <thead>
+                    <tr style="background-color: #3a3a3a;">
+                        <th colspan="3">Title</th>
+                        <th class="clickable text-center auto-size" id="commentsorder" style="width: 105px;">Comments</th>
+                        <th class="clickable text-center r-hide" id="dateorder" style="width: 120px">Views</th>
+                        <th class="clickable text-center auto-size" id="commentsorder" style="width: 105px;">Created by</th>
+                        <th class="clickable text-center auto-size" id="viewsorder">Added</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for anon_post in anon_posts_list %}
+                    <tr class="doxentry">
+                        <td colspan="3" style="overflow: hidden;text-overflow: ellipsis;">
+                            <a title="{{ anon_post.name }}" href="{{ url_for('post', file=anon_post.name) }}">
+                                {{ anon_post.name }}
+                            </a>
+                        </td>
+                        <td style="width: 120px" class="text-center r-hide">{{ anon_post.comments|length }}</td>
+                        <td style="width: 120px" class="text-center r-hide">{{ anon_post.view }}</td>
+                        <td style="width: 105px;" class="text-center">
+                            {% if anon_post.pastownerstatus == 'root' %}
+                                <a class="dox-username" href="{{ url_for('user', username=anon_post.pastowner) }}" target="_self" style="color: #ff0000;font-weight: bold;background-image: url('https://cdn.doxbin.net/red.gif');">
+                                    {{ anon_post.pastowner }}
+                                </a>
+                            {% elif anon_post.pastownerstatus == 'admin' %}
+                                <a class="dox-username" href="{{ url_for('user', username=anon_post.pastowner) }}" target="_self" style="color: #bb71e4; font-weight: bold;background-image: url('https://cdn.doxbin.net/purple.gif');">
+                                    {{ anon_post.pastowner }}
+                                </a>
+                            {% elif anon_post.pastownerstatus == 'mod' %}
+                                <a class="dox-username" href="{{ url_for('user', username=anon_post.pastowner) }}" target="_self" style="color: #FFD700; font-weight: bold;background-image: url('https://cdn.doxbin.net/gold.gif');">
+                                    {{ anon_post.pastowner }}
+                                </a>
+                            {% elif anon_post.pastownerstatus == 'council' %}
+                                <a class="dox-username" href="{{ url_for('user', username=anon_post.pastowner) }}" target="_self" style="color: #87cefa; font-weight: bold;">
+                                    {{ anon_post.pastowner }}
+                                </a>
+                            {% elif anon_post.pastownerstatus == 'user' %}
+                                <a style="color: #2a9fd6;" href="{{ url_for('user', username=anon_post.pastowner) }}">{{ anon_post.pastowner }}</a>
+                            {% elif anon_post.pastownerstatus == 'anonymous' %}
+                                {{ anon_post.pastowner }}
+                            {% endif %}
+                        </td>                        
+                        <td class="text-center">{{ anon_post.creation_date }} {{ anon_post.creation_time }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>                 
+    </div>
+
+    <div class="clickable text-center auto-size">
+        <br>
+            <a href="#">Back to top</a>
+        </br>
+    </div>
+
+</body>
+
+</html>
+{% endblock %}
